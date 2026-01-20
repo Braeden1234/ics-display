@@ -120,3 +120,4 @@ foreach ($result_array as $events) {
 
 		echo "\t</div>\n</div>\n";
 }
+?>
