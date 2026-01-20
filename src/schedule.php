@@ -13,22 +13,22 @@ $failed = false;
 
 // Add both assignments and exams to the array
 foreach ($calendar_urls as $name => $url) {
-    try {
-        $this_ical = new \ICal\ICal($url);
-    } catch (Exception $e) {
-        $failed = true;
-        continue; // Skip to the next calendar URL
-    }
+	$this_ical = new \ICal\ICal($url);
 
-    $item_count = 0;
+	// Skip calendar if it cannot load
+	if ($this_ical === false) {
+		$failed = true;
+		continue;
+	}
 
-    // Get events within date range
-    $start_date = $days_back == -1 ? false : "-{$days_back} days";
-    $end_date = $days_forward == -1 ? false : "+{$days_forward} days";
-    $events = $this_ical->eventsFromRange($start_date, $end_date);
-    
-    // Remaining code...
-}
+	$item_count = 0;
+
+	// Get events within date range
+	$start_date = $days_back == -1 ? false : "-{$days_back} days";
+	$end_date = $days_forward == -1 ? false : "+{$days_forward} days";
+	$events = $this_ical->eventsFromRange($start_date, $end_date);
+
+	foreach ($events as $event) {
 		// Set array index as date
 		$target = date("Ymd", strtotime($event->dtstart));
 
@@ -120,4 +120,3 @@ foreach ($result_array as $events) {
 
 		echo "\t</div>\n</div>\n";
 }
-
