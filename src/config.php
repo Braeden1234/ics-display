@@ -14,7 +14,7 @@ $darken_past = true;
 $darken_calendars = false;
 $darken_keyword = "#DARK";
 
-$show_ical_errors = true;
+$show_ical_errors = false;
 
 $calendar_urls = array(
 	"cal1" => "http://www.example.com/cal1.ics",
