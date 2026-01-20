@@ -1,8 +1,8 @@
 <?php
 // See README file for information on this configuration
 $number_of_events = -1;
-$days_back = 7;
-$days_forward = 14;
+$days_back = -1;
+$days_forward = -1;
 
 $skip_string = "SKIP ME";
 
