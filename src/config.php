@@ -17,7 +17,7 @@ $darken_keyword = "#DARK";
 $show_ical_errors = true;
 
 $calendar_urls = array(
-	"cal1" => "http://www.example.com/cal1.ics",
+	"cal1" => "https://calendar.google.com/calendar/ical/26bbelvedere%40bishopfoley.org/public/basic.ics",
 	"cal2" => "http://www.example.com/cal2.ics"
 );
 
